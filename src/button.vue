@@ -38,23 +38,15 @@ export default {
   border-radius: var(--border-radius); border: 1px solid var(--border-color);
   background: var(--button-bg); vertical-align: middle;
   display: inline-flex; justify-content: center; align-items: center;
-  &:hover {
-    border: 1px solid var(--border-color-hover);
-  }
-  &:active {
-    background: var(--button-active-bg);
-  }
-  &:focus {
-    outline: none;
-  }
+  &:hover { border: 1px solid var(--border-color-hover); }
+  &:active { background: var(--button-active-bg); }
+  &:focus { outline: none; }
   > .icon { order: 1; margin-right: .2em; }
   > .content { order: 2; }
   &.icon-right {
     > .icon { order: 2; margin-right: 0; margin-left: .2em;}
     > .content { order: 1; }
   }
-  .loading {
-    animation: spin 2s infinite linear;
-  }
+  .loading { animation: spin 2s infinite linear; }
 }
 </style>
