@@ -1,0 +1,22 @@
+{
+  "name": "learn-vue-gulu",
+  "version": "1.0.0",
+  "description": "使用 vue 快乐地造轮子",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ximuli/learn-vue-gulu.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "ximuli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ximuli/learn-vue-gulu/issues"
+  },
+  "homepage": "https://github.com/ximuli/learn-vue-gulu#readme"
+}
