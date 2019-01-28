@@ -2,7 +2,7 @@
   "name": "learn-vue-gulu",
   "version": "1.0.0",
   "description": "使用 vue 快乐地造轮子",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
