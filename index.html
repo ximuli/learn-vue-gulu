@@ -17,24 +17,29 @@
       --border-color: #999;
       --border-color-hover: #666;
     }
-    #app {
-      margin: 20px;
-    }
-    body {
-      font-size: var(--font-size);
-    }
+    #app { margin: 20px; }
+    body { font-size: var(--font-size); }
+  </style>
+  <style>
+    .box { margin: 20px; }
   </style>
 </head>
 <body>
   <div id="app">
-    <l-button :loading="loading1" @click="loading1 = !loading1">Button</l-button>
-    <l-button :loading="loading2" @click="loading2 = !loading2" icon="settings" icon-position="left">Button</l-button>
-    <l-button :loading="loading3" @click="loading3 = !loading3" icon="settings" icon-position="right">Button</l-button>
-    <l-button-group>
-      <l-button icon="left">Prev</l-button>
-      <l-button>More</l-button>
-      <l-button icon="right" icon-position="right">Next</l-button>
-    </l-button-group>
+    <div class="box">
+      <l-input v-model="msg"></l-input>
+      <p>{{msg}}</p>
+    </div>
+    <div class="box">
+      <l-button :loading="loading1" @click="loading1 = !loading1">Button</l-button>
+      <l-button :loading="loading2" @click="loading2 = !loading2" icon="settings" icon-position="left">Button</l-button>
+      <l-button :loading="loading3" @click="loading3 = !loading3" icon="settings" icon-position="right">Button</l-button>
+      <l-button-group>
+        <l-button icon="left">Prev</l-button>
+        <l-button>More</l-button>
+        <l-button icon="right" icon-position="right">Next</l-button>
+      </l-button-group>
+    </div>
   </div>
   <script src="./src/app.js"></script>
   <!-- <script src="//at.alicdn.com/t/font_945818_6k0fbi1c98.js"></script> -->

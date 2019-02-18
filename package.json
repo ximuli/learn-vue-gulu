@@ -1,6 +1,6 @@
 {
   "name": "learn-vue-gulu",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "使用 vue 快乐地造轮子",
   "main": "dist/index.js",
   "scripts": {
