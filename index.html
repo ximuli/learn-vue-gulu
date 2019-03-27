@@ -26,26 +26,43 @@
 </head>
 <body>
   <div id="app">
-    <l-row>
-      <l-col>666</l-col>
-      <l-col>777</l-col>
-    </l-row>
-    <l-row>
-      <l-col>666</l-col>
-      <l-col>777</l-col>
-      <l-col>666</l-col>
-    </l-row>
-    <l-row>
-      <l-col>666</l-col>
-      <l-col>777</l-col>
-      <l-col>666</l-col>
-      <l-col>666</l-col>
-    </l-row>
-    <l-row>
-      <l-col :span="2">666</l-col>
-      <l-col :span="22">777</l-col>
-    </l-row>
-    <hr>
+    <div style="border: 1px solid black;">
+      <l-row gutter="20">
+        <l-col>666</l-col>
+        <l-col>777</l-col>
+      </l-row>
+      <l-row gutter="20">
+        <l-col>666</l-col>
+        <l-col>777</l-col>
+        <l-col>666</l-col>
+      </l-row>
+      <l-row gutter="20">
+        <l-col>666</l-col>
+        <l-col>777</l-col>
+        <l-col>666</l-col>
+        <l-col>666</l-col>
+      </l-row>
+      <l-row gutter="20">
+        <l-col :span="4">666</l-col>
+        <l-col :span="20">777</l-col>
+      </l-row>
+      <l-row gutter="20">
+        <l-col :span="2">666</l-col>
+        <l-col :span="20" offset="2">777</l-col>
+      </l-row>
+      <l-row gutter="20">
+        <l-col :span="2">666</l-col>
+        <l-col :span="18" offset="4">777</l-col>
+      </l-row>
+      <l-row gutter="20">
+        <l-col :span="4">666</l-col>
+        <l-col :span="8">777</l-col>
+        <l-col :span="12">777</l-col>
+      </l-row>
+    </div>
+
+    <hr style="margin: 20px 0;">
+    
     <div class="box">
       <l-input v-model="msg"></l-input>
       <p>{{msg}}</p>
