@@ -26,6 +26,26 @@
 </head>
 <body>
   <div id="app">
+    <l-row>
+      <l-col>666</l-col>
+      <l-col>777</l-col>
+    </l-row>
+    <l-row>
+      <l-col>666</l-col>
+      <l-col>777</l-col>
+      <l-col>666</l-col>
+    </l-row>
+    <l-row>
+      <l-col>666</l-col>
+      <l-col>777</l-col>
+      <l-col>666</l-col>
+      <l-col>666</l-col>
+    </l-row>
+    <l-row>
+      <l-col :span="2">666</l-col>
+      <l-col :span="22">777</l-col>
+    </l-row>
+    <hr>
     <div class="box">
       <l-input v-model="msg"></l-input>
       <p>{{msg}}</p>
