@@ -35,16 +35,25 @@ export default {
       gutter: 0
     }
   },
+  methods: {
+    createClass (obj, str = '') {
+      if(!obj) {return []}
+      let arr =[]
+      if (obj.span) { arr.push(`col-${str}${obj.span}`) }
+      if (obj.offset) { arr.push(`offset-${str}${obj.offset}`) }
+      return arr
+    }
+  },
   computed: {
     colClass() {
       let {span, offset, ipad, npc, pc, wpc} = this
+      let createClass = this.createClass
       return [
-        span &&`col-${span}`,
-        offset && `offset-${offset}`,
-        ...(ipad ? [`col-ipad-${ipad.span}`] : []),
-        ...(npc ? [`col-npc-${npc.span}`] : []),
-        ...(pc ? [`col-pc-${pc.span}`] : []),
-        ...(wpc ? [`col-wpc-${wpc.span}`] : [])
+        ...createClass({span, offset}),
+        ...createClass(ipad, 'ipad-'),
+        ...createClass(npc, 'npc-'),
+        ...createClass(pc, 'pc-'),
+        ...createClass(wpc, 'wpc-')
       ]
     },
     colStyle() {
