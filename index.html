@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>learn-vue-gulu</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    img {max-width: 100%;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
     :root {
       --button-height: 32px;
       --font-size: 14px;
@@ -18,34 +27,56 @@
       --border-color: #999;
       --border-color-hover: #666;
     }
-    #app { margin: 20px; }
-    body { font-size: var(--font-size); }
+
+    #app {
+      margin: 20px;
+    }
+
+    body {
+      font-size: var(--font-size);
+    }
   </style>
   <style>
-    .box { margin: 20px; }
+    .box {
+      margin: 20px;
+    }
+  </style>
+  <style>
+    .demo {
+      background-color: #eee;
+      border: 1px solid #666;
+      height: 100px;
+    }
   </style>
 </head>
+
 <body>
   <div id="app">
     <div style="border: 1px solid black;">
-      <l-row gutter="20">
-        <l-col span="24"
-          :ipad="{span:8}"
-          :npc="{span:4}"
-          :pc="{span:2}"
-          :wpc="{span:1}"
-        >666</l-col>
-        <l-col span="24"
-          :ipad="{span:16}"
-          :npc="{span:20}"
-          :pc="{span:22}"
-          :wpc="{span:23}"
-        >777</l-col>
+      <l-row>
+        <l-col span="24" :npc="{span:8}">
+          <div class="demo"></div>
+        </l-col>
+        <l-col span="24" :npc="{span:8}">
+          <div class="demo"></div>
+        </l-col>
+        <l-col span="24" :npc="{span:8}">
+          <div class="demo"></div>
+        </l-col>
+        <l-col span="24" :npc="{span:8}">
+          <div class="demo"></div>
+        </l-col>
+        <l-col span="24" :npc="{span:8}">
+          <div class="demo"></div>
+        </l-col>
+        <l-col span="24" :npc="{span:8}">
+          <div class="demo"></div>
+        </l-col>
       </l-row>
     </div>
 
     <hr style="margin: 20px 0;">
-    
+
     <div class="box">
       <l-input v-model="msg"></l-input>
       <p>{{msg}}</p>
@@ -53,7 +84,8 @@
     <div class="box">
       <l-button :loading="loading1" @click="loading1 = !loading1">Button</l-button>
       <l-button :loading="loading2" @click="loading2 = !loading2" icon="settings" icon-position="left">Button</l-button>
-      <l-button :loading="loading3" @click="loading3 = !loading3" icon="settings" icon-position="right">Button</l-button>
+      <l-button :loading="loading3" @click="loading3 = !loading3" icon="settings" icon-position="right">Button
+      </l-button>
       <l-button-group>
         <l-button icon="left">Prev</l-button>
         <l-button>More</l-button>
@@ -64,4 +96,5 @@
   <script src="./src/app.js"></script>
   <!-- <script src="//at.alicdn.com/t/font_945818_6k0fbi1c98.js"></script> -->
 </body>
+
 </html>
