@@ -27,10 +27,10 @@
       --border-color: #999;
       --border-color-hover: #666;
     }
-
+/* 
     #app {
       margin: 20px;
-    }
+    } */
 
     body {
       font-size: var(--font-size);
@@ -43,26 +43,25 @@
   </style>
   <style>
     .demo {
-      background-color: #eee;
+      /* background-color: #eee; */
       border: 1px solid #666;
-      height: 100px;
+      min-height: 100px;
     }
   </style>
 </head>
 
 <body>
   <div id="app">
-    <div style="border: 1px solid black;">
-      <l-row>
-        <l-col span="23" offset="1" :npc="{span:12, offset:12}">
-          <div class="demo"></div>
-        </l-col>
-      </l-row>
-    </div>
+    <l-layout style="height: 100vh;">
+      <l-header class="demo">header</l-header>
+      <l-content class="demo">content</l-content>
+      <l-footer class="demo">footer</l-footer>
+    </l-layout>
 
-    <hr style="margin: 20px 0;">
 
-    <div class="box">
+    <!-- <hr style="margin: 20px 0;"> -->
+
+    <!-- <div class="box">
       <l-input v-model="msg"></l-input>
       <p>{{msg}}</p>
     </div>
@@ -76,7 +75,7 @@
         <l-button>More</l-button>
         <l-button icon="right" icon-position="right">Next</l-button>
       </l-button-group>
-    </div>
+    </div> -->
   </div>
   <script src="./src/app.js"></script>
   <!-- <script src="//at.alicdn.com/t/font_945818_6k0fbi1c98.js"></script> -->
