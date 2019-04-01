@@ -47,17 +47,32 @@
       border: 1px solid #666;
       min-height: 100px;
     }
+    .header {
+      background-color: #999;
+      height: 10%;
+    }
+    .sider {
+      background-color: #666;
+      width: 150px;
+    }
+    .sider.slide-enter, .sider.slide-leave-to {
+      margin-left: -150px!important;
+    }
+    .footer {
+      background-color: #999;
+      height: 10%;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
     <l-layout style="height: 100vh;">
-      <l-sider class="demo">sider</l-sider>
+      <l-sider>sider</l-sider>
       <l-layout>
-        <l-header class="demo">header</l-header>
-        <l-content class="demo">content</l-content>
-        <l-footer class="demo">footer</l-footer>
+        <l-header>header</l-header>
+        <l-content>content</l-content>
+        <l-footer>footer</l-footer>
       </l-layout>
       
     </l-layout>
