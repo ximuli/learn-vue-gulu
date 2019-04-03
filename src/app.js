@@ -40,7 +40,16 @@ new Vue({
   },
   methods: {
     showToast() {
-      this.$toast('我是message')
+      this.$toast('很多文字', {
+        enableHtml: true,
+        closeButton: {
+          text: '知道啦',
+          callback(toast) { // toast 是从toast组件中传过来的
+            toast.log()
+            console.log('用户说他知道了')
+          }
+        }
+      })
     }
   }
 })
