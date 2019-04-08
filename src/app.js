@@ -41,7 +41,8 @@ new Vue({
   methods: {
     showToast() {
       this.$toast('很多文字', {
-        enableHtml: true,
+        enableHtml: false,
+        position: 'middle',
         closeButton: {
           text: '知道啦',
           callback(toast) { // toast 是从toast组件中传过来的
