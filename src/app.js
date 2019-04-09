@@ -40,7 +40,7 @@ new Vue({
   },
   methods: {
     showToast() {
-      this.$toast('很多文字', {
+      this.$toast(`您的智商余额为${parseInt(Math.random()*100)}，请充值`, {
         enableHtml: false,
         position: 'middle',
         closeButton: {
