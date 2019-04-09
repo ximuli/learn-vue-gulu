@@ -42,7 +42,7 @@ new Vue({
     showToast() {
       this.$toast(`您的智商余额为${parseInt(Math.random()*100)}，请充值`, {
         enableHtml: false,
-        position: 'middle',
+        position: 'bottom',
         closeButton: {
           text: '知道啦',
           callback(toast) { // toast 是从toast组件中传过来的
