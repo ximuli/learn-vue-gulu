@@ -39,10 +39,19 @@ new Vue({
     
   },
   methods: {
-    showToast() {
+    showToast1() {
+      this.showToast('top')
+    },
+    showToast2() {
+      this.showToast('middle')
+    },
+    showToast3() {
+      this.showToast('bottom')
+    },
+    showToast(position) {
       this.$toast(`您的智商余额为${parseInt(Math.random()*100)}，请充值`, {
+        position,
         enableHtml: false,
-        position: 'bottom',
         closeButton: {
           text: '知道啦',
           callback(toast) { // toast 是从toast组件中传过来的
