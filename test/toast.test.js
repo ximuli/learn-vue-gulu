@@ -26,8 +26,8 @@ describe('Toast', () => {
       })
     })
 
-    it('接收 closeButton', () => {
-      const callback = sinon.fake();
+    it('接收 closeButton', (done) => {
+      const callback = sinon.fake()
       const Constructor = Vue.extend(Toast)
       const vm = new Constructor({
         propsData: {
@@ -39,8 +39,14 @@ describe('Toast', () => {
       }).$mount()
       let closeButton = vm.$el.querySelector('.close')
       expect(closeButton.textContent.trim()).to.eq('关闭吧')
-      closeButton.click()
-      expect(callback).to.have.been.called
+      /*
+      * 如果直接 click 则关闭速度太快，导致组件里的代码在获取 this.refs.line 报错是 undefined ，而且正常用户也做不到这么快
+      * */
+      setTimeout(() => {
+        closeButton.click()
+        expect(callback).to.have.been.called
+        done()
+      }, 300)
     })
 
     it('接收 enableHtml', () => {
