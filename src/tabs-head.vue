@@ -25,8 +25,10 @@
 <style lang="scss" scoped>
   $tab-height: 40px;
   $blue: #1890ff;
+  $border-color: #ddd;
   .tabs-head {
     display: flex; height: $tab-height; justify-content: flex-start; position: relative;
+    border-bottom: 1px solid $border-color;
     > .line {
       position: absolute; bottom: 0;
       border-bottom: 2px solid $blue;
@@ -34,6 +36,10 @@
     }
     > .actions-wrapper {
       margin-left: auto; // 这个写法可以使元素靠右
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
     }
   }
 </style>
