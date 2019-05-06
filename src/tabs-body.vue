@@ -8,9 +8,7 @@
 	export default {
 		name: "GuluTabsBody",
 		inject: ['eventBus'],
-		created() {
-		
-		}
+		created() {}
 	}
 </script>
 
