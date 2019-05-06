@@ -37,17 +37,19 @@
     },
     methods: {
 			xxx () {
-				this.eventBus.$emit('update:selected', this.name) // 在事件中心 emit 一个事件
+				this.eventBus.$emit('update:selected', this.name, this) // 在事件中心 emit 一个事件
       }
     }
 	}
 </script>
 
 <style lang="scss" scoped>
+  $blue: #1890ff;
   .tabs-item {
     padding: 0 1em; flex-shrink: 0; cursor: pointer; display: flex; align-items: center;
     &.active {
-      background-color: red;
+      color: $blue;
+      font-weight: bold;
     }
   }
 </style>
