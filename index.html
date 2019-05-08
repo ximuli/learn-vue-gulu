@@ -7,16 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>learn-vue-gulu</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    img { max-width: 100%; }
+    
     :root {
       --button-height: 32px;
       --font-size: 14px;
@@ -27,24 +21,19 @@
       --border-color: #999;
       --border-color-hover: #666;
     }
-/* 
-    #app {
-      margin: 20px;
-    } */
 
-    body {
-      font-size: var(--font-size);
-    }
+    /* #app { margin: 20px; } */
+    
+    body { font-size: var(--font-size); }
   </style>
   <style>
-    .box {
-      margin: 20px;
-    }
+    .box { margin: 20px; }
   </style>
 </head>
 
 <body>
   <div id="app">
+    <!-- 组件 tabs 示例 -->
     <!-- <l-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
     <l-tabs :selected.sync="selectedTab">
       <l-tabs-head>
@@ -63,21 +52,25 @@
         <l-tabs-pane name="sports">体育相关资讯</l-tabs-pane>
       </l-tabs-body>
     </l-tabs>
-<!--    <l-button @click="showToast">点我 showToast</l-button>-->
-<!--    <l-button @click="showToast1">top</l-button>-->
-<!--    <l-button @click="showToast2">middle</l-button>-->
-<!--    <l-button @click="showToast3">bottom</l-button>-->
-    <!-- <hr style="margin: 20px 0;"> -->
+    
+    <!-- 组件 toast 示例-->
+    <!-- <l-button-group>
+      <l-button @click="showToast">点我 showToast</l-button>
+      <l-button @click="showToast1">top</l-button>
+      <l-button @click="showToast2">middle</l-button>
+      <l-button @click="showToast3">bottom</l-button>
+    </l-button-group> -->
 
+    <!-- 组件 input 示例 -->
     <!-- <div class="box">
       <l-input v-model="msg"></l-input>
       <p>{{msg}}</p>
-    </div>
-    <div class="box">
+    </div> -->
+    
+    <!-- 组件 button 示例 -->
+    <!-- <div class="box">
       <l-button :loading="loading1" @click="loading1 = !loading1">Button</l-button>
       <l-button :loading="loading2" @click="loading2 = !loading2" icon="settings" icon-position="left">Button</l-button>
-      <l-button :loading="loading3" @click="loading3 = !loading3" icon="settings" icon-position="right">Button
-      </l-button>
       <l-button-group>
         <l-button icon="left">Prev</l-button>
         <l-button>More</l-button>

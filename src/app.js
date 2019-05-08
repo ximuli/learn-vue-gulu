@@ -17,8 +17,11 @@ import TabsItem from './tabs-item'
 import TabsBody from './tabs-body'
 import TabsPane from './tabs-pane'
 
+// 使用插件
 import plugin from './plugin'
+Vue.use(plugin)
 
+// 注册全局组件
 Vue.component('l-button', Button)
 Vue.component('l-icon', Icon)
 Vue.component('l-button-group', ButtonGroup)
@@ -37,20 +40,15 @@ Vue.component('l-tabs-item', TabsItem)
 Vue.component('l-tabs-body', TabsBody)
 Vue.component('l-tabs-pane', TabsPane)
 
-Vue.use(plugin)
-
 new Vue({
   el: '#app',
   data: {
     selectedTab: 'sports',
     loading1: true,
     loading2: false,
-    loading3: false,
     msg: 'Hello, world!'
   },
-  created() {
-    
-  },
+  created() {},
   methods: {
     showToast1() {
       this.showToast('top')
