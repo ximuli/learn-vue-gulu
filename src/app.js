@@ -16,6 +16,8 @@ import TabsHead from './tabs-head'
 import TabsItem from './tabs-item'
 import TabsBody from './tabs-body'
 import TabsPane from './tabs-pane'
+import Popover from './popover'
+
 
 // 使用插件
 import plugin from './plugin'
@@ -39,6 +41,8 @@ Vue.component('l-tabs-head', TabsHead)
 Vue.component('l-tabs-item', TabsItem)
 Vue.component('l-tabs-body', TabsBody)
 Vue.component('l-tabs-pane', TabsPane)
+Vue.component('l-popover', Popover)
+
 
 new Vue({
   el: '#app',

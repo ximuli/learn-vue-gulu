@@ -33,9 +33,26 @@
 
 <body>
   <div id="app">
+    <!-- 组件 popover 示例 -->
+    <div style="padding: 120px;">
+      <l-popover>
+        <template slot="content">
+          <div>popover 内容</div>
+        </template>
+        <button>按钮</button>
+      </l-popover>
+  
+      <l-popover>
+        <template slot="content">
+          <div>popover 内容</div>
+        </template>
+        <button>按钮</button>
+      </l-popover>
+    </div>
+
     <!-- 组件 tabs 示例 -->
     <!-- <l-tabs selected="selectedTab" @update:selected="selectedTab = $event"> -->
-    <l-tabs :selected.sync="selectedTab">
+    <!-- <l-tabs :selected.sync="selectedTab">
       <l-tabs-head>
         <template slot="actions">
           <button>设置</button>
@@ -51,7 +68,7 @@
         <l-tabs-pane name="finance">财经相关资讯</l-tabs-pane>
         <l-tabs-pane name="sports">体育相关资讯</l-tabs-pane>
       </l-tabs-body>
-    </l-tabs>
+    </l-tabs> -->
     
     <!-- 组件 toast 示例-->
     <!-- <l-button-group>
