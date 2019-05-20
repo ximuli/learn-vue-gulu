@@ -43,8 +43,11 @@
       </l-popover>
   
       <l-popover position="bottom">
-        <template slot="content">
-          <div>popover 内容</div>
+        <template slot="content" slot-scope="{ close }">
+          <div>
+            popover 内容，你好啊世界，你好啊世界，你好啊世界，你好啊世界，你好啊世界你好啊世界你好啊世界你好啊世界，你好啊世界。
+          </div>
+          <l-button @click="close">关闭</l-button>
         </template>
         <l-button>下</l-button>
       </l-popover>

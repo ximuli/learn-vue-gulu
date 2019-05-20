@@ -1,7 +1,7 @@
 <template>
   <div class="popover" ref="popover">
     <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]: true}">
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block;">
       <slot></slot> 
@@ -135,7 +135,7 @@ $border-radius: 4px;
   &.position-top {
     transform: translateY(-100%); margin-top: -10px;
     &::before,&::after {
-      left: 10px;
+      left: 10px; border-bottom: none;
     }
     &::before {
       border-top-color: $border-color; top: 100%;
@@ -147,7 +147,7 @@ $border-radius: 4px;
   &.position-bottom {
     margin-top: 10px;
     &::before,&::after {
-      left: 10px;
+      left: 10px; border-top: none;
     }
     &::before {
       border-bottom-color: $border-color; bottom: 100%;
@@ -159,7 +159,7 @@ $border-radius: 4px;
   &.position-left {
     transform: translateX(-100%); margin-left: -10px;
     &::before,&::after {
-      top: 50%; transform: translateY(-50%);
+      top: 50%; transform: translateY(-50%); border-right: none;
     }
     &::before {
       left: 100%; border-left-color: $border-color;
@@ -171,7 +171,7 @@ $border-radius: 4px;
   &.position-right {
     margin-left: 10px;
     &::before, &::after {
-      top: 50%; transform: translateY(-50%);
+      top: 50%; transform: translateY(-50%); border-left: none;
     }
     &::before {
       border-right-color: $border-color; right: 100%;
