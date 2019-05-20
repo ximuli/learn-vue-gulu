@@ -34,7 +34,7 @@
 <body>
   <div id="app">
     <!-- 组件 popover 示例 -->
-    <div style="padding: 100px;">
+    <div style="padding: 50px;">
       <l-popover>
         <template slot="content">
           <div>popover 内容</div>
@@ -57,6 +57,35 @@
       </l-popover>
 
       <l-popover position="right">
+        <template slot="content">
+          <div>popover 内容</div>
+        </template>
+        <l-button>右</l-button>
+      </l-popover>
+    </div>
+    <div style="padding: 50px;">
+      <l-popover trigger="hover">
+        <template slot="content">
+          <div>popover 内容</div>
+        </template>
+        <l-button>上</l-button>
+      </l-popover>
+  
+      <l-popover position="bottom" trigger="hover">
+        <template slot="content">
+          <div>popover 内容</div>
+        </template>
+        <l-button>下</l-button>
+      </l-popover>
+
+      <l-popover position="left" trigger="hover">
+        <template slot="content">
+          <div>popover 内容</div>
+        </template>
+        <l-button>左</l-button>
+      </l-popover>
+
+      <l-popover position="right" trigger="hover">
         <template slot="content">
           <div>popover 内容</div>
         </template>
