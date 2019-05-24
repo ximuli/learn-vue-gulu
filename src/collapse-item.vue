@@ -1,6 +1,6 @@
 <template>
   <div class="collapse-item">
-    <div class="title" @click="isOpen=!isOpen">
+    <div class="title" @click="toggleStatus">
       {{title}}
     </div>
     <div class="content" v-if="isOpen">
@@ -18,9 +18,30 @@ export default {
       required: true
     }
   },
+  inject: ['eventBus'],
   data() {
     return {
       isOpen: false
+    }
+  },
+  mounted() {
+    this.eventBus && this.eventBus.$on('update:selected', (vm) => {
+      if (vm !== this) {
+        this.onClose()
+      }
+    })
+  },
+  methods: {
+    toggleStatus() {
+      if (this.isOpen) {
+        this.isOpen = false
+      } else {
+        this.isOpen = true
+        this.eventBus && this.eventBus.$emit('update:selected', this)
+      }
+    },
+    onClose() {
+      this.isOpen =false
     }
   }
 }
