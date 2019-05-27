@@ -51,7 +51,7 @@ Vue.component('l-collapse-item', CollapseItem)
 new Vue({
   el: '#app',
   data: {
-    selectedTab: '2',
+    selectedTab: ['2', '1'],
     loading1: true,
     loading2: false,
     msg: 'Hello, world!'

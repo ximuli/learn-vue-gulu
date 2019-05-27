@@ -1,7 +1,7 @@
 <template>
   <div class="collapse-item">
     <div class="title" @click="toggleStatus">
-      {{title}}
+      {{single}} {{title}}
     </div>
     <div class="content" v-if="isOpen">
       <slot></slot>
@@ -25,31 +25,27 @@ export default {
   inject: ['eventBus'],
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      single: false
     }
   },
   mounted() {
-    this.eventBus && this.eventBus.$on('update:selected', (name) => {
-      if (name !== this.name) {
-        this.onClose()
+    this.eventBus && this.eventBus.$on('update:selected', (names) => {
+      if (names.indexOf(this.name) >= 0) {
+        this.isOpen = true
       } else {
-        this.onShow()
+        this.isOpen = false
       }
     })
   },
   methods: {
     toggleStatus() {
       if (this.isOpen) {
-        this.isOpen = false
+        // this.isOpen = false
+        this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
       } else {
-        this.eventBus && this.eventBus.$emit('update:selected', this.name)
+        this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
       }
-    },
-    onClose() {
-      this.isOpen = false
-    },
-    onShow() {
-      this.isOpen = true
     }
   }
 }
