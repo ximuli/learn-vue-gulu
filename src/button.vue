@@ -2,7 +2,7 @@
   <button class="l-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
     <l-icon class="icon loading" v-if="loading" name="loading"></l-icon>
     <l-icon class="icon" v-if="icon && !loading" :name="icon"></l-icon>
-    <div class="content">
+    <div class="l-button-content">
       <slot></slot>
     </div>
   </button>
@@ -33,24 +33,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$font-size: 14px;
+$button-height: 32px;
+$button-bg: #fff;
+$button-active-bg: #eee;
+$border-radius: 4px;
+$color: #333;
+$border-color: #999;
+$border-color-hover: #666;
+
 @keyframes spin {
   0% { transform: rotate(0) }
   100% { transform: rotate(360deg) }
 }
 .l-button {
-  font-size: var(--font-size); height: var(--button-height); padding: 0 1em;
-  border-radius: var(--border-radius); border: 1px solid var(--border-color);
-  background: var(--button-bg); vertical-align: middle;
+  font-size: $font-size; height: $button-height; padding: 0 1em;
+  border-radius: $border-radius; border: 1px solid $border-color;
+  background: $button-bg; vertical-align: middle;
   display: inline-flex; justify-content: center; align-items: center;
-  &:hover { border: 1px solid var(--border-color-hover); }
-  &:active { background: var(--button-active-bg); }
+  &:hover { border: 1px solid $border-color-hover; }
+  &:active { background: $button-active-bg; }
   &:focus { outline: none; }
   > .icon { order: 1; margin-right: .2em; }
-  > .content { order: 2; }
+  > .l-button-content { order: 2; }
   &.icon-right {
     > .icon { order: 2; margin-right: 0; margin-left: .2em;}
-    > .content { order: 1; }
+    > .l-button-content { order: 1; }
   }
   .loading { animation: spin 2s infinite linear; }
+  &[disabled] { cursor: not-allowed; }
 }
 </style>
