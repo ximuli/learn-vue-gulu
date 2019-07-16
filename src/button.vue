@@ -33,14 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$font-size: 14px;
-$button-height: 32px;
-$button-bg: #fff;
-$button-active-bg: #eee;
-$border-radius: 4px;
-$color: #333;
-$border-color: #999;
-$border-color-hover: #666;
+@import './var.scss';
 
 @keyframes spin {
   0% { transform: rotate(0) }

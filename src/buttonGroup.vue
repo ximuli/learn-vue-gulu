@@ -18,7 +18,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-radius: 4px;
+@import './var.scss';
+
 .l-button-group { display: inline-flex; vertical-align: middle;
   > .l-button {
     border-radius: 0;

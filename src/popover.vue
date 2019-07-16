@@ -119,13 +119,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: #333;
-$border-radius: 4px;
+@import './var.scss';
+
 .popover {
   display: inline-block; vertical-align: top; position: relative;
 }
 .content-wrapper {
-  position: absolute; border: 1px solid $border-color; border-radius: $border-radius; padding: 0.5em 1em;
+  position: absolute; border: 1px solid $color; border-radius: $border-radius; padding: 0.5em 1em;
   max-width: 20em; word-break: break-all;
   // box-shadow: 0 0 3px #333; 使用这个并不能使小三角也带阴影
   filter: drop-shadow(0 1px 2px #333); background-color: #fff; // 这两项配合可以使小三角也带阴影
@@ -138,7 +138,7 @@ $border-radius: 4px;
       left: 10px; border-bottom: none;
     }
     &::before {
-      border-top-color: $border-color; top: 100%;
+      border-top-color: $color; top: 100%;
     }
     &::after {
       border-top-color: white; top: calc(100% - 1px); 
@@ -150,7 +150,7 @@ $border-radius: 4px;
       left: 10px; border-top: none;
     }
     &::before {
-      border-bottom-color: $border-color; bottom: 100%;
+      border-bottom-color: $color; bottom: 100%;
     }
     &::after {
       border-bottom-color: white; bottom: calc(100% - 1px); 
@@ -162,7 +162,7 @@ $border-radius: 4px;
       top: 50%; transform: translateY(-50%); border-right: none;
     }
     &::before {
-      left: 100%; border-left-color: $border-color;
+      left: 100%; border-left-color: $color;
     }
     &::after {
       left: calc(100% - 1px); border-left-color: white;
@@ -174,7 +174,7 @@ $border-radius: 4px;
       top: 50%; transform: translateY(-50%); border-left: none;
     }
     &::before {
-      border-right-color: $border-color; right: 100%;
+      border-right-color: $color; right: 100%;
     }
     &::after {
       border-right-color: white; right: calc(100% - 1px);

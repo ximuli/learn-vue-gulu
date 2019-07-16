@@ -49,17 +49,17 @@
 </script>
 
 <style lang="scss" scoped>
-  $blue: #1890ff;
-  $disabled-text-color: grey;
-  .tabs-item {
-    padding: 0 1em; flex-shrink: 0; cursor: pointer; display: flex; align-items: center;
-    &.active {
-      color: $blue;
-      font-weight: bold;
-    }
-    &.disabled {
-      color: $disabled-text-color;
-      cursor: not-allowed;
-    }
+@import './var.scss';
+
+.tabs-item {
+  padding: 0 1em; flex-shrink: 0; cursor: pointer; display: flex; align-items: center;
+  &.active {
+    color: $blue;
+    font-weight: bold;
   }
+  &.disabled {
+    color: $disabled-text-color;
+    cursor: not-allowed;
+  }
+}
 </style>

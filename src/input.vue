@@ -40,18 +40,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: 32px;
-$border-color: #999;
-$border-color-hover: #666;
-$border-radius: 4px;
-$font-size: 14px;
-$box-shadow-color: rgba(0,0,0,.5);
-$red: #F1453D;
+@import './var.scss';
+
 .wrapper {
   font-size: $font-size; display: inline-flex; align-items: center;
   > :not(:last-child) {margin-right: .5em; }
   > input {
-    height: $height; border: 1px solid $border-color; padding: 0 8px; border-radius: $border-radius; 
+    height: $button-height; border: 1px solid $border-color; padding: 0 8px; border-radius: $border-radius; 
     font-size: inherit;
     &:hover { border-color: $border-color-hover; }
     &:focus { outline: none; box-shadow: inset 0px 0px 2px $box-shadow-color; }
