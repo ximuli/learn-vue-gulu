@@ -19,7 +19,7 @@ import TabsPane from './tabs-pane'
 import Popover from './popover'
 import Collapse from './collapse'
 import CollapseItem from './collapse-item'
-
+import Cascader from './cascader'
 
 // 使用插件
 import plugin from './plugin'
@@ -46,17 +46,61 @@ Vue.component('l-tabs-pane', TabsPane)
 Vue.component('l-popover', Popover)
 Vue.component('l-collapse', Collapse)
 Vue.component('l-collapse-item', CollapseItem)
+Vue.component('l-cascader', Cascader)
 
 
 new Vue({
   el: '#app',
   data: {
+    source: [
+      {
+        name: '浙江',
+        children: [
+          {
+            name: '杭州',
+            children: [
+              { name: '上城' },
+              { name: '下城' },
+              { name: '江干' }
+            ]
+          },
+          {
+            name: '嘉兴',
+            children: [
+              { name: '南湖' },
+              { name: '秀洲' },
+              { name: '嘉善' }
+            ]
+          }
+        ]
+      },
+      {
+        name: '福建',
+        children: [
+          {
+            name: '福州',
+            children: [
+              { name: '一二' },
+              { name: '三四' },
+              { name: '五六' }
+            ]
+          },
+          {
+            name: '233',
+            children: [
+              { name: '七八' },
+              { name: '九十' }
+            ]
+          }
+        ]
+      }
+    ],
     selectedTab: ['2', '1'],
     loading1: true,
     loading2: false,
     msg: 'Hello, world!'
   },
-  created() {},
+  created() { },
   methods: {
     showToast1() {
       this.showToast('top')
@@ -68,7 +112,7 @@ new Vue({
       this.showToast('bottom')
     },
     showToast(position) {
-      this.$toast(`您的智商余额为${parseInt(Math.random()*100)}，请充值`, {
+      this.$toast(`您的智商余额为${parseInt(Math.random() * 100)}，请充值`, {
         position,
         enableHtml: false,
         closeButton: {
