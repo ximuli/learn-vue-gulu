@@ -57,9 +57,11 @@ export default {
       ]
     },
     colStyle() {
-      return {
-        paddingLeft: this.gutter/2 + 'px',
-        paddingRight: this.gutter/2 + 'px'
+      if (this.gutter) {
+        return {
+          marginLeft: this.gutter/2 + 'px',
+          marginRight: this.gutter/2 + 'px'
+        }
       }
     }
   }
@@ -68,6 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .col {
+  box-sizing: border-box;
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {

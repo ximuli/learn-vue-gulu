@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './var.scss';
+@import './../var.scss';
 
 .l-button-group { display: inline-flex; vertical-align: middle;
   > .l-button {

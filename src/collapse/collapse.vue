@@ -47,15 +47,15 @@ export default {
       this.$emit('update:selected', selectedCopy)
       this.eventBus.$emit('update:selected', selectedCopy)
     })
-    this.$children.forEach(vm => {
-      vm.single = this.single
-    })
+    // this.$children.forEach(vm => {
+    //   vm.single = this.single
+    // })
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import './var.scss';
+@import './../var.scss';
 
 .collapse {
   border: 1px solid $grey;

@@ -1,7 +1,7 @@
 <template>
   <div class="collapse-item">
     <div class="title" @click="toggleStatus">
-      {{single}} {{title}}
+      {{title}}
     </div>
     <div class="content" v-if="isOpen">
       <slot></slot>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './var.scss';
+@import './../var.scss';
 
 .collapse-item {
   > .title {

@@ -30,17 +30,21 @@ export default {
     }
   },
   mounted() {
-    this.$children.forEach(vm => {
-      vm.gutter = this.gutter
-    })
+    if (this.gutter) {
+      this.$children.forEach(vm => {
+        vm.gutter = this.gutter
+      })
+    }
+    
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .row {
+  box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   &.align-right {
     justify-content: flex-end;
   }

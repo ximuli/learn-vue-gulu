@@ -1,15 +1,13 @@
 module.exports = {
-  title: 'Hello VuePress',
-  description: 'Just playing around',
   base: '/learn-vue-gulu/',
+  title: 'Learn Vue Gulu',
+  description: 'Just playing around',
   themeConfig: {
     sidebar: [
       {
         title: '入门',
-        // collapsable: false,
         children: [
-          '/install/',
-          '/get-started/'
+          '/install/'
         ]
       },
       {
@@ -27,9 +25,7 @@ module.exports = {
       }
     ],
     nav: [
-      {text: '主页', link: '/'},
-      {text: '文档', link: '/guide/'},
-      {text: '交流', link: 'https://google.com'},
+      {text: 'Github', link: 'https://github.com/ximuli/learn-vue-gulu'}
     ]
   }
 }

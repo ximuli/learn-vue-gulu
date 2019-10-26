@@ -5,8 +5,10 @@
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
       </div>
-      <div class="line" ref="line"></div>
-      <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+      <template v-if="!autoClose">
+        <div class="line" ref="line"></div>
+        <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+      </template>
     </div>
   </div>
 </template>
@@ -17,7 +19,7 @@ export default {
   props: {
     autoClose: {
       type: [Boolean, Number],
-      default: 5,
+      default: 3,
       validator(value) {
         return value === false || typeof value === 'number'
       }
@@ -54,9 +56,11 @@ export default {
   },
   methods: {
     updateStyles() {
-      this.$nextTick(() => { // 直接赋值获取不到外层元素的高度
-        this.$refs.line.style.height = this.$refs.toast.getBoundingClientRect().height + 'px'
-      })
+      if (!this.autoClose) {
+        this.$nextTick(() => { // 直接赋值获取不到外层元素的高度
+          this.$refs.line.style.height = this.$refs.toast.getBoundingClientRect().height + 'px'
+        })
+      }
     },
     execAutoClose() {
       if (this.autoClose) {
@@ -69,9 +73,6 @@ export default {
       this.$el.remove()
       this.$emit('beforeClose')
       this.$destroy()
-    },
-    log() {
-      console.log('测试')
     },
     onClickClose() {
       this.close()
@@ -100,7 +101,7 @@ export default {
 }
 
 .wrapper {
-  position: fixed; left: 50%; transform: translateX(-50%);
+  position: fixed; left: 50%; transform: translateX(-50%); z-index:100;
   &.position-top {
     top: 0;
     .toast {

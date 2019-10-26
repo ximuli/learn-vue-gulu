@@ -42,11 +42,13 @@ export default {
     }
   },
   destroyed() {
-    if (this.trigger === 'click') {
-      this.$refs.popover.removeEventListener('click', this.onClick)
-    } else {
-      this.$refs.popover.removeEventListener('mouseenter', this.open)
-      this.$refs.popover.removeEventListener('mouseleave', this.close)
+    if (this.$refs.popover) {
+      if (this.trigger === 'click') {
+        this.$refs.popover.removeEventListener('click', this.onClick)
+      } else {
+        this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover.removeEventListener('mouseleave', this.close)
+      }
     }
   },
   computed: {
@@ -119,7 +121,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './var.scss';
+@import './../var.scss';
 
 .popover {
   display: inline-block; vertical-align: top; position: relative;
