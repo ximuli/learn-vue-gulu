@@ -1,16 +1,13 @@
-const expect = chai.expect;
-import Vue from 'vue'
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import Popover from '../src/popover'
-
-Vue.config.productionTip = false
-Vue.config.devtools = false
+chai.use(sinonChai)
 
 describe('Popover', () => {
-
   it('存在.', () => {
     expect(Popover).to.exist
   })
-
   it('接收 position 属性', (done) => {
     Vue.component('l-popover', Popover)
     const div = document.createElement('div')
